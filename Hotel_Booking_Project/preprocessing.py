@@ -28,13 +28,13 @@ def model_assessment(datafile):
     ytest = pd.DataFrame(data=ytest, columns=None)
     xtrain = pd.DataFrame(data=xtrain)  # dataframe
     xtest = pd.DataFrame(data=xtest)
+
     xtrain = xtrain.drop(columns=['is_canceled']) # removing label
     xtest = xtest.drop(columns=['is_canceled'])  # removing label
 
     return xtrain, xtest, ytrain, ytest
 
 def preprocessing(xTrain, xTest, yTrain, yTest):
-
 
     # Scale/Normalize the data
 
