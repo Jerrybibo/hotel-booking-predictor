@@ -23,37 +23,48 @@ def feature_reduction(datafile):
     datafile = datafile.drop(columns=['agent'])
     datafile =datafile.dropna()
 
-    # int values for categorical data:
-    i = 0
-    for hoteltype in datafile['hotel']:
-        x = hoteltype[0]
-        if hoteltype == 'Resort Hotel':
-            datafile['hotel'][i] = 0
-        if hoteltype == 'City Hotel':
-            datafile['hotel'][i] = 1
-        i = i+1
-    i = 0
-    for deposittype in datafile['deposit_type']:
+    dummies_hotel = pd.get_dummies(datafile['hotel'])
+    datafile = datafile.drop(columns=['hotel'])
 
-        if deposittype == 'No Deposit':
-            datafile['deposit_type'][i] = 0
-        if deposittype == 'Non Refund':
-            datafile['deposit_type'][i] = 1
-        if deposittype == 'Refundable':
-            datafile['deposit_type'][i] = 2
-        i = i + 1
-    i = 0
-    for customertype in datafile['customer_type']:
-        if customertype == 'Transient':
-            datafile['customer_type'][i] = 0
-        if customertype == 'Transient-Party':
-            datafile['customer_type'][i] = 1
-        if customertype == 'Group':
-            datafile['customer_type'][i] = 2
-        if customertype == 'Contract':
-            datafile['customer_type'][i] = 3
-        i = i + 1
-    return datafile
+    dummies_deposit = pd.get_dummies(datafile['deposit_type'])
+    datafile = datafile.drop(columns=['deposit_type'])
+
+    dummies_customer = pd.get_dummies(datafile['customer_type'])
+    datafile = datafile.drop(columns=['customer_type'])
+
+    merged = pd.concat([datafile, dummies_hotel,dummies_deposit,dummies_customer],axis='columns' )
+
+    # # int values for categorical data:
+    # i = 0
+    # for hoteltype in datafile['hotel']:
+    #     x = hoteltype[0]
+    #     if hoteltype == 'Resort Hotel':
+    #         datafile['hotel'][i] = 0
+    #     if hoteltype == 'City Hotel':
+    #         datafile['hotel'][i] = 1
+    #     i = i+1
+    # i = 0
+    # for deposittype in datafile['deposit_type']:
+    #
+    #     if deposittype == 'No Deposit':
+    #         datafile['deposit_type'][i] = 0
+    #     if deposittype == 'Non Refund':
+    #         datafile['deposit_type'][i] = 1
+    #     if deposittype == 'Refundable':
+    #         datafile['deposit_type'][i] = 2
+    #     i = i + 1
+    # i = 0
+    # for customertype in datafile['customer_type']:
+    #     if customertype == 'Transient':
+    #         datafile['customer_type'][i] = 0
+    #     if customertype == 'Transient-Party':
+    #         datafile['customer_type'][i] = 1
+    #     if customertype == 'Group':
+    #         datafile['customer_type'][i] = 2
+    #     if customertype == 'Contract':
+    #         datafile['customer_type'][i] = 3
+    #     i = i + 1
+    return merged
 
 def main():
     # set up the program to take in arguments from the command line

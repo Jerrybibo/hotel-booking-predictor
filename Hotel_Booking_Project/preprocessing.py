@@ -1,6 +1,7 @@
 import argparse
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 
@@ -18,11 +19,11 @@ def model_assessment(datafile):
 
     for sample in train:  # TRAIN
         # x= sample['is_cancelled']
-        ytrain.append(int(sample[1]))
+        ytrain.append(int(sample[0]))
 
 
     for sample in test:  # TEST
-        ytest.append(int(sample[1]))
+        ytest.append(int(sample[0]))
 
     ytrain = pd.DataFrame(data=ytrain, columns=None)  # dataframe
     ytest = pd.DataFrame(data=ytest, columns=None)
@@ -36,33 +37,48 @@ def model_assessment(datafile):
 
 def preprocessing(xTrain, xTest, yTrain, yTest):
 
-    # Scale/Normalize the data
+    # Scale/Normalize the data:
 
+    # one hot endocing
+
+    # one_hot = OneHotEncoder(categorical_features=[0])
+
+    # standard scaler
     standardized_scale = StandardScaler()
-    standardized_scale.fit(xTrain)  # fitting to training set
-    xTrain = standardized_scale.transform(xTrain)  # transforming training
-    xTest = standardized_scale.transform(xTest)  # transforming test
+
+    xTrain[['lead_time','arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
+        'stays_in_week_nights', 'adults','children', 'babies','previous_cancellations', 'booking_changes',
+        'days_in_waiting_list', 'adr', 'required_car_parking_spaces','total_of_special_requests'  ]] = standardized_scale.fit_transform(xTrain[['lead_time','arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
+        'stays_in_week_nights', 'adults','children', 'babies','previous_cancellations', 'booking_changes',
+        'days_in_waiting_list', 'adr', 'required_car_parking_spaces','total_of_special_requests'  ]])
+
+
+    xTest[['lead_time','arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
+        'stays_in_week_nights', 'adults','children', 'babies','previous_cancellations', 'booking_changes',
+        'days_in_waiting_list', 'adr', 'required_car_parking_spaces','total_of_special_requests'  ]] = standardized_scale.transform(xTest[['lead_time','arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
+        'stays_in_week_nights', 'adults','children', 'babies','previous_cancellations', 'booking_changes',
+        'days_in_waiting_list', 'adr', 'required_car_parking_spaces','total_of_special_requests'  ]])  # transforming test
 
     # remove features using Pear Corr or manually (if necessary)
 
     # Run PCA to reduce dimensionality (95% variance)
+    #
+    # pca = PCA(n_components=0.95) # 95% variance XTRAIN
+    # pca.fit(X=xTrain, y=yTrain)
+    #
+    # pca_test = PCA(n_components=0.95)  # 95% variance XTEST
+    # pca_test.fit(X=xTest, y=yTest)
+    #
+    # xTrainPCA= pca.transform(X=xTrain)
+    # xTestPCA= pca_test.transform(X=xTest)
+    #
+    #
+    # yTrain = pd.DataFrame(data=yTrain, columns=None)  # dataframe
+    # yTest = pd.DataFrame(data=yTest, columns=None)
+    # xTrainPCA = pd.DataFrame(data=xTrainPCA)  # dataframe
+    # xTestPCA = pd.DataFrame(data=xTestPCA)
 
-    pca = PCA(n_components=0.95) # 95% variance XTRAIN
-    pca.fit(X=xTrain, y=yTrain)
-
-    pca_test = PCA(n_components=0.95)  # 95% variance XTEST
-    pca_test.fit(X=xTest, y=yTest)
-
-    xTrainPCA= pca.transform(X=xTrain)
-    xTestPCA= pca_test.transform(X=xTest)
-
-
-    yTrain = pd.DataFrame(data=yTrain, columns=None)  # dataframe
-    yTest = pd.DataFrame(data=yTest, columns=None)
-    xTrainPCA = pd.DataFrame(data=xTrainPCA)  # dataframe
-    xTestPCA = pd.DataFrame(data=xTestPCA)
-
-    return xTrainPCA, xTestPCA, yTrain, yTest
+    return xTrain, xTest, yTrain, yTest
 
 def main():
     # -->  python preprocessing.py xTrain.csv xTest.csv yTrain.csv yTest.csv
