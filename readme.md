@@ -1,5 +1,5 @@
 # CS334 Course Project
-###Project Directory
+### Project Directory
 
 ```
 cs334-course-project/
