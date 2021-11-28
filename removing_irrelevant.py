@@ -1,7 +1,7 @@
+# THIS CODE IS MY OWN WORK, IT WAS WRITTEN WITHOUT CONSULTING CODE WRITTEN BY OTHER STUDENTS. Mimi Olayeye
+
 import pandas as pd
 
-
-# THIS CODE IS MY OWN WORK, IT WAS WRITTEN WITHOUT CONSULTING CODE WRITTEN BY OTHER STUDENTS. Mimi Olayeye
 
 def feature_reduction(datafile):
     # dropping irrelevant/redundant features
@@ -21,7 +21,7 @@ def feature_reduction(datafile):
     datafile = datafile.drop(columns=['assigned_room_type'])
     datafile = datafile.drop(columns=['reservation_status'])
     datafile = datafile.drop(columns=['agent'])
-    datafile =datafile.dropna()
+    datafile = datafile.dropna()
 
     dummies_hotel = pd.get_dummies(datafile['hotel'])
     datafile = datafile.drop(columns=['hotel'])
@@ -32,7 +32,7 @@ def feature_reduction(datafile):
     dummies_customer = pd.get_dummies(datafile['customer_type'])
     datafile = datafile.drop(columns=['customer_type'])
 
-    merged = pd.concat([datafile, dummies_hotel,dummies_deposit,dummies_customer],axis='columns' )
+    merged = pd.concat([datafile, dummies_hotel, dummies_deposit, dummies_customer], axis='columns')
 
     # # int values for categorical data:
     # i = 0
@@ -66,27 +66,20 @@ def feature_reduction(datafile):
     #     i = i + 1
     return merged
 
+
 def main():
     # set up the program to take in arguments from the command line
 
     # loading hotel booking dataframe
-    hotel_booking = pd.read_csv("hotel_booking.csv",dtype = 'unicode')
+    hotel_booking = pd.read_csv("hotel_booking.csv", dtype='unicode')
     hotel_booking_2 = feature_reduction(hotel_booking)
 
-    # hotel booking 2 has all irrelavant feature removed
+    # hotel booking 2 has all irrelevant feature removed
     # & all categorical data is converted to numerical values
-    hotel_booking_2= pd.DataFrame(hotel_booking_2)
+    hotel_booking_2 = pd.DataFrame(hotel_booking_2)
 
-    # outputing hotel 2
+    # outputting hotel 2
     hotel_booking_2.to_csv("hotel_booking_2.csv", index=False)
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
