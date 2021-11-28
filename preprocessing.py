@@ -2,6 +2,7 @@
 
 import argparse
 import pandas as pd
+from globals import *
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.decomposition import PCA
@@ -9,21 +10,14 @@ from sklearn.model_selection import train_test_split
 
 
 def model_assessment(datafile):
-    xtrain, xtest = train_test_split(datafile, shuffle=True)  # split
+    xtrain, xtest = train_test_split(datafile, shuffle=True, random_state=RANDOM_STATE)  # split
 
     train = xtrain.to_numpy()  # train with label "is_cancelled"
     test = xtest.to_numpy()  # test with label "is_cancelled"
 
     # initializing y (label) arrays
-    ytrain = []
-    ytest = []
-
-    for sample in train:  # TRAIN
-        # x = sample['is_cancelled']
-        ytrain.append(int(sample[0]))
-
-    for sample in test:  # TEST
-        ytest.append(int(sample[0]))
+    ytrain = [int(s[0]) for s in train]
+    ytest = [int(s[0]) for s in test]
 
     ytrain = pd.DataFrame(data=ytrain, columns=None)  # dataframe
     ytest = pd.DataFrame(data=ytest, columns=None)
