@@ -38,6 +38,7 @@ def model_assessment(datafile):
 
 def preprocessing(xTrain, xTest, yTrain, yTest):
     # Scale/Normalize the data:
+    # Todo: Choose only continuous features to standardize, then reproduce hotel_booking_2.csv
 
     # one hot encoding
     # one_hot = OneHotEncoder(categorical_features=[0])
