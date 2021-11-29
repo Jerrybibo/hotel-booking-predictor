@@ -6,7 +6,7 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score
 
 
-def main():
+def process_nb():
     # Read dataset
     x_train = pd.read_csv('xTrain.csv').to_numpy()
     y_train = pd.read_csv('yTrain.csv').to_numpy()
@@ -38,6 +38,9 @@ def main():
     accuracy = accuracy_score(y_hat, y_test)
     print("Accuracy on test: {}%".format(round(accuracy, 6) * 100))
 
+    # Return model for later usage
+    return nb
+
 
 if __name__ == "__main__":
-    main()
+    process_nb()
