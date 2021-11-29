@@ -29,5 +29,7 @@ def main():
         models[model] = train_model(model)
         print("Training and prediction completed in {}s.".format(round(time() - start_time), 4))
 
+    # Models are saved in the dictionary models and can be accessed through models[model_name]
+
 
 main()
