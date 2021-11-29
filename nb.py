@@ -13,7 +13,7 @@ def main():
     x_test = pd.read_csv('xTest.csv').to_numpy()
     y_test = pd.read_csv('yTest.csv').to_numpy()
 
-    # Initialize decision tree classifier
+    # Initialize binary Naive Bayes classifier
     nb = BernoulliNB().fit(x_train, ravel(y_train))
 
     # Predict accuracy using KFold

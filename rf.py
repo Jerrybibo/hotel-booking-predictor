@@ -13,9 +13,8 @@ def main():
     x_test = pd.read_csv('xTest.csv').to_numpy()
     y_test = pd.read_csv('yTest.csv').to_numpy()
 
-    # Initialize decision tree classifier
-    rf = RandomForestClassifier(n_estimators=100, bootstrap=True, max_features='sqrt')
-    rf.fit(x_train, ravel(y_train))
+    # Initialize random forest classifier
+    rf = RandomForestClassifier(n_estimators=100, bootstrap=True, max_features='sqrt').fit(x_train, ravel(y_train))
 
     # Predict accuracy using KFold
     kf = KFold(n_splits=FOLD_COUNT, random_state=RANDOM_STATE, shuffle=True)
