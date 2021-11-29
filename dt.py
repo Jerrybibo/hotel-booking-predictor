@@ -8,10 +8,10 @@ from sklearn.metrics import accuracy_score
 
 def process_dt():
     # Read dataset
-    x_train = pd.read_csv('xTrain.csv').to_numpy()
-    y_train = pd.read_csv('yTrain.csv').to_numpy()
-    x_test = pd.read_csv('xTest.csv').to_numpy()
-    y_test = pd.read_csv('yTest.csv').to_numpy()
+    x_train = pd.read_csv('x_train.csv').to_numpy()
+    y_train = pd.read_csv('y_train.csv').to_numpy()
+    x_test = pd.read_csv('x_test.csv').to_numpy()
+    y_test = pd.read_csv('y_test.csv').to_numpy()
 
     # Initialize decision tree classifier
     dt = DecisionTreeClassifier(random_state=RANDOM_STATE).fit(x_train, y_train)

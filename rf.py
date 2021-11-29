@@ -8,10 +8,10 @@ from sklearn.metrics import accuracy_score
 
 def process_rf():
     # Read dataset
-    x_train = pd.read_csv('xTrain.csv').to_numpy()
-    y_train = pd.read_csv('yTrain.csv').to_numpy()
-    x_test = pd.read_csv('xTest.csv').to_numpy()
-    y_test = pd.read_csv('yTest.csv').to_numpy()
+    x_train = pd.read_csv('x_train.csv').to_numpy()
+    y_train = pd.read_csv('y_train.csv').to_numpy()
+    x_test = pd.read_csv('x_test.csv').to_numpy()
+    y_test = pd.read_csv('y_test.csv').to_numpy()
 
     # Initialize random forest classifier
     rf = RandomForestClassifier(n_estimators=100, bootstrap=True, max_features='sqrt').fit(x_train, ravel(y_train))

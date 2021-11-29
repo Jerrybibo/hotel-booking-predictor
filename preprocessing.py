@@ -1,115 +1,136 @@
-# THIS CODE IS MY OWN WORK, IT WAS WRITTEN WITHOUT CONSULTING CODE WRITTEN BY OTHER STUDENTS. Mimi Olayeye
-
 import argparse
 import pandas as pd
-from globals import *
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.decomposition import PCA
+import numpy as np
+from time import time
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from datetime import datetime
+from globals import *
+
+# Silence chained assignment warnings from pandas
+pd.options.mode.chained_assignment = None
 
 
-def model_assessment(datafile):
-    xtrain, xtest = train_test_split(datafile, shuffle=True, random_state=RANDOM_STATE)  # split
-
-    train = xtrain.to_numpy()  # train with label "is_cancelled"
-    test = xtest.to_numpy()  # test with label "is_cancelled"
-
-    # initializing y (label) arrays
-    ytrain = [int(s[0]) for s in train]
-    ytest = [int(s[0]) for s in test]
-
-    ytrain = pd.DataFrame(data=ytrain, columns=None)  # dataframe
-    ytest = pd.DataFrame(data=ytest, columns=None)
-    xtrain = pd.DataFrame(data=xtrain)  # dataframe
-    xtest = pd.DataFrame(data=xtest)
-
-    xtrain = xtrain.drop(columns=['is_canceled'])  # removing label
-    xtest = xtest.drop(columns=['is_canceled'])  # removing label
-
-    return xtrain, xtest, ytrain, ytest
+def df_to_train_test(feature_df):
+    # Splits our feature dataframe into train-test sets and organize them accordingly
+    train, test = train_test_split(feature_df, shuffle=True, random_state=RANDOM_STATE)
+    np_train, np_test = train.to_numpy(), test.to_numpy()
+    y_train = pd.DataFrame(data=[int(s[0]) for s in np_train], columns=None)
+    y_test = pd.DataFrame(data=[int(s[0]) for s in np_test], columns=None)
+    x_train = pd.DataFrame(train)
+    x_train.drop(columns=['is_canceled'], inplace=True)
+    x_test = pd.DataFrame(test)
+    x_test.drop(columns=['is_canceled'], inplace=True)
+    return x_train, x_test, y_train, y_test
 
 
-def preprocessing(xTrain, xTest, yTrain, yTest):
-    # Scale/Normalize the data:
-    # Todo: Choose only continuous features to standardize, then reproduce hotel_booking_2.csv
+def feature_reduction(feature_df):
+    # First, drop all irrelevant features
+    reduced_df = feature_df[RELEVANT_FEATURES]
 
-    # one hot encoding
-    # one_hot = OneHotEncoder(categorical_features=[0])
+    # Remove all N/A entries and reset index
+    reduced_df = reduced_df.dropna().reset_index(drop=True)
 
-    # standard scaler
-    standardized_scale = StandardScaler()
+    # Feature modification
+    # Combine arrival_date_month and arrival_date_day_of_month to form arrival_day_of_year
+    # Also check if reserved room type matches assigned room type to reduce total iteration count (1 = matches)
+    reduced_df['arrival_date_month'] = list(map(lambda x: MONTHS.index(x), reduced_df['arrival_date_month']))
+    for i in range(len(reduced_df)):
+        reduced_df['arrival_date_day_of_month'][i] = datetime(
+            year=reduced_df['arrival_date_year'][i],
+            month=reduced_df['arrival_date_month'][i] + 1,
+            day=reduced_df['arrival_date_day_of_month'][i]
+        ).timetuple().tm_yday
+        reduced_df['reserved_room_type'][i] = [0, 1].index(
+            (reduced_df['reserved_room_type'][i] == reduced_df['assigned_room_type'][i])
+        )
+    reduced_df.rename(columns={'arrival_date_day_of_month': 'arrival_day_of_year',
+                               'reserved_room_type': 'room_request_matched'}, inplace=True)
+    reduced_df.drop(columns=['arrival_date_month', 'arrival_date_year', 'assigned_room_type'], inplace=True)
 
-    xTrain[['lead_time', 'arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
-            'stays_in_week_nights', 'adults', 'children', 'babies', 'previous_cancellations', 'booking_changes',
-            'days_in_waiting_list', 'adr', 'required_car_parking_spaces',
-            'total_of_special_requests']] = standardized_scale.fit_transform(
-        xTrain[['lead_time', 'arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
-                'stays_in_week_nights', 'adults', 'children', 'babies', 'previous_cancellations', 'booking_changes',
-                'days_in_waiting_list', 'adr', 'required_car_parking_spaces', 'total_of_special_requests']])
+    # Combine head count of children and babies to form minors count
+    reduced_df['children'] = reduced_df['children'].add(reduced_df['babies']).astype(int)
+    reduced_df.rename(columns={'children': 'minors'}, inplace=True)
+    reduced_df.drop(columns=['babies'], inplace=True)
 
-    xTest[['lead_time', 'arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
-           'stays_in_week_nights', 'adults', 'children', 'babies', 'previous_cancellations', 'booking_changes',
-           'days_in_waiting_list', 'adr', 'required_car_parking_spaces',
-           'total_of_special_requests']] = standardized_scale.transform(
-        xTest[['lead_time', 'arrival_date_week_number', 'arrival_date_day_of_month', 'stays_in_weekend_nights',
-               'stays_in_week_nights', 'adults', 'children', 'babies', 'previous_cancellations', 'booking_changes',
-               'days_in_waiting_list', 'adr', 'required_car_parking_spaces',
-               'total_of_special_requests']])  # transforming test
+    # Check if the hotel booker is from Portugal (1 = not from Portugal)
+    reduced_df['country'] = reduced_df['country'].apply(lambda x: [0, 1].index(x != 'PRT'))
+    reduced_df.rename(columns={'country': 'is_foreign'}, inplace=True)
 
-    # remove features using Pear Corr or manually (if necessary)
+    # One-hot encoding for hotel, deposit_type and customer_type
+    hotel_dummies = pd.get_dummies(reduced_df['hotel']).rename(columns={
+        'City Hotel': 'city_hotel',
+        'Resort Hotel': 'resort_hotel'})
+    deposit_type_dummies = pd.get_dummies(reduced_df['deposit_type']).rename(columns={
+        'No Deposit': 'no_deposit',
+        'Non Refund': 'non_refund',
+        'Refundable': 'refundable'
+    })
+    customer_type_dummies = pd.get_dummies(reduced_df['customer_type']).rename(columns={
+        'Transient': 'transient',
+        'Transient-Party': 'transient_party',
+        'Contract': 'contract',
+        'Group': 'group'
+    })
+    reduced_df.drop(columns=['hotel', 'deposit_type', 'customer_type'], inplace=True)
+    reduced_df = pd.concat([reduced_df, hotel_dummies, deposit_type_dummies, customer_type_dummies], axis='columns')
 
-    # Run PCA to reduce dimensionality (95% variance)
-    #
-    # pca = PCA(n_components=0.95) # 95% variance XTRAIN
-    # pca.fit(X=xTrain, y=yTrain)
-    #
-    # pca_test = PCA(n_components=0.95)  # 95% variance XTEST
-    # pca_test.fit(X=xTest, y=yTest)
-    #
-    # xTrainPCA= pca.transform(X=xTrain)
-    # xTestPCA= pca_test.transform(X=xTest)
-    #
-    #
-    # yTrain = pd.DataFrame(data=yTrain, columns=None)  # dataframe
-    # yTest = pd.DataFrame(data=yTest, columns=None)
-    # xTrainPCA = pd.DataFrame(data=xTrainPCA)  # dataframe
-    # xTestPCA = pd.DataFrame(data=xTestPCA)
+    return reduced_df
 
-    return xTrain, xTest, yTrain, yTest
+
+def preprocess(x_train, x_test, y_train, y_test):
+    # Given the four train-test sets, scale reasonable features
+    std_scale_features = [
+        'lead_time',
+        'stays_in_weekend_nights',
+        'stays_in_week_nights',
+        'adults',
+        'minors',
+        'previous_cancellations',
+        'previous_bookings_not_canceled',
+        'booking_changes',
+        'days_in_waiting_list',
+        'adr',
+        'total_of_special_requests'
+    ]
+    # Initialize StandardScaler and scale features
+    std_scaler = StandardScaler()
+    x_train[std_scale_features] = std_scaler.fit_transform(x_train[std_scale_features])
+    x_test[std_scale_features] = std_scaler.transform(x_test[std_scale_features])
+    return x_train, x_test, y_train, y_test
+
+
+def preprocess_file(filename, out_file):
+    start_time = time()
+    print("Reading original dataset...")
+    original_dataset = pd.read_csv(filename)
+    print("Performing feature reduction...")
+    reduced_dataset = feature_reduction(original_dataset)
+    print("Exporting new dataset to {}...".format(out_file))
+    reduced_dataset.to_csv(out_file, index=False)
+    print("Splitting dataset to train-test sets...")
+    x_train, x_test, y_train, y_test = df_to_train_test(reduced_dataset)
+    print("Scaling the train-test feature sets...")
+    x_train, x_test, y_train, y_test = preprocess(x_train, x_test, y_train, y_test)
+    print("Exporting the train-test files...")
+    x_train.to_csv('x_train.csv', index=False)
+    x_test.to_csv('x_test.csv', index=False)
+    y_train.to_csv('y_train.csv', index=False)
+    y_test.to_csv('y_test.csv', index=False)
+    print("Completed in {}s.".format(round(time() - start_time, 2)))
 
 
 def main():
-    # -->  python preprocessing.py xTrain.csv xTest.csv yTrain.csv yTest.csv
-    # set up the program to take in arguments from the command line
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("out_x_Train",
-                        help="filename of the updated training data")
-    parser.add_argument("out_x_Test",
-                        help="filename of the updated test data")
-    parser.add_argument("out_y_Train",
-                        help="filename of the updated training data")
-    parser.add_argument("out_y_Test",
-                        help="filename of the updated test data")
-    parser.add_argument("--data",
-                        default="hotel_booking_2.csv",
+    parser = argparse.ArgumentParser(
+        description="Processes and train-test splits the input data into features and labels.")
+    parser.add_argument("-i",
+                        default="hotel_booking.csv",
                         help="filename of the input data")
+    parser.add_argument("-o",
+                        default="hotel_booking_processed.csv",
+                        help="filename of the output (processed) data")
     args = parser.parse_args()
-
-    hotel_booking_2 = pd.read_csv("hotel_booking_2.csv", dtype='unicode')
-
-    # split into x train/test and y train/test
-    xtrain, xtest, ytrain, ytest = model_assessment(hotel_booking_2)
-
-    # normalized and PCA
-    xtrain, xtest, ytrain, ytest = preprocessing(xtrain, xtest, ytrain, ytest)
-
-    # output
-    xtrain.to_csv(args.out_x_Train, index=False)
-    xtest.to_csv(args.out_x_Test, index=False)
-    ytrain.to_csv(args.out_y_Train, index=False)
-    ytest.to_csv(args.out_y_Test, index=False)
+    preprocess_file(args.i, args.o)
 
 
 if __name__ == "__main__":
