@@ -1,4 +1,9 @@
 # CS334 Course Project
+
+### Installation
+Navigate to the project directory and execute the following command:
+```pip install requirements.txt```
+
 ### Project Directory
 
 ```

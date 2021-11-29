@@ -6,13 +6,7 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score
 
 
-def process_rf():
-    # Read dataset
-    x_train = pd.read_csv('x_train.csv').to_numpy()
-    y_train = pd.read_csv('y_train.csv').to_numpy()
-    x_test = pd.read_csv('x_test.csv').to_numpy()
-    y_test = pd.read_csv('y_test.csv').to_numpy()
-
+def process_rf(x_train, x_test, y_train, y_test):
     # Initialize random forest classifier
     rf = RandomForestClassifier(n_estimators=100, bootstrap=True, max_features='sqrt').fit(x_train, ravel(y_train))
 
@@ -40,7 +34,3 @@ def process_rf():
 
     # Return model for later usage
     return rf
-
-
-if __name__ == "__main__":
-    process_rf()

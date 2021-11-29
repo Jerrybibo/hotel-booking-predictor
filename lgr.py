@@ -6,13 +6,7 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score
 
 
-def process_lgr():
-    # Read dataset
-    x_train = pd.read_csv('x_train.csv').to_numpy()
-    y_train = pd.read_csv('y_train.csv').to_numpy()
-    x_test = pd.read_csv('x_test.csv').to_numpy()
-    y_test = pd.read_csv('y_test.csv').to_numpy()
-
+def process_lgr(x_train, x_test, y_train, y_test):
     # Initialize logistic regression model
     lgr = LogisticRegression(random_state=RANDOM_STATE, max_iter=5000)
 
@@ -40,7 +34,3 @@ def process_lgr():
 
     # Return model for later usage
     return lgr
-
-
-if __name__ == "__main__":
-    process_lgr()

@@ -5,6 +5,19 @@ from nb import process_nb
 from rf import process_rf
 from dt import process_dt
 from time import time
+from pandas import read_csv
+from globals import USE_LEGACY_DATASET
+
+if USE_LEGACY_DATASET:
+    x_train = read_csv('legacy/xTrain.csv').to_numpy()
+    x_test = read_csv('legacy/xTest.csv').to_numpy()
+    y_train = read_csv('legacy/yTrain.csv').to_numpy()
+    y_test = read_csv('legacy/yTest.csv').to_numpy()
+else:
+    x_train = read_csv('x_train.csv').to_numpy()
+    x_test = read_csv('x_test.csv').to_numpy()
+    y_train = read_csv('y_train.csv').to_numpy()
+    y_test = read_csv('y_test.csv').to_numpy()
 
 
 def train_model(model):
@@ -18,7 +31,7 @@ def train_model(model):
         raise Exception("The specified model {} is not part of the available models ({}).".format(
             model, available_models.keys()
         ))
-    return available_models[model]()
+    return available_models[model](x_train, x_test, y_train, y_test)
 
 
 def main():
@@ -27,9 +40,10 @@ def main():
         print("Training {} model...".format(model))
         start_time = time()
         models[model] = train_model(model)
-        print("Training and prediction completed in {}s.".format(round(time() - start_time), 4))
+        print("Training and prediction completed in {}s.".format(round(time() - start_time, 4)))
 
     # Models are saved in the dictionary models and can be accessed through models[model_name]
 
 
-main()
+if __name__ == "__main__":
+    main()

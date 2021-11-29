@@ -2,6 +2,8 @@ RANDOM_STATE = 334
 
 FOLD_COUNT = 10
 
+USE_LEGACY_DATASET = False
+
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December']
 
