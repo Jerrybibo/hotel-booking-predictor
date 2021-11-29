@@ -34,19 +34,24 @@
         <h2>Hotel Booking Dataset
             <small class="text-muted">Interactive UI</small>
         </h2>
+        <ul>
+            <li>Several features are excluded from this form due to weak predictive power, or very rare deviations from average/majority value.</li>
+            <li>Hover over the feature title text to learn more.</li>
+        </ul>
         <form action="predict.php" method="post">
             <table class="table table-bordered" style="text-align:center">
                 <thead>
                     <tr>
-                        <th data-bs-toggle="tooltip" title="">Lead Time</th>
-                        <th data-bs-toggle="tooltip" title="">Arrival Date</th>
-                        <th data-bs-toggle="tooltip" title="">Stay Duration</th>
-                        <th data-bs-toggle="tooltip" title="">Adults</th>
-                        <th data-bs-toggle="tooltip" title="">Children</th>
-                        <th data-bs-toggle="tooltip" title="">Babies</th>
-                        <th data-bs-toggle="tooltip" title="">Hotel Type</th>
-                        <th data-bs-toggle="tooltip" title="">Deposit Type</th>
-                        <th data-bs-toggle="tooltip" title="">Customer Type</th>
+                        <th data-bs-toggle="tooltip" title="Number of days that elapsed between the entering date of the booking into the management system and the arrival date.">Lead Time</th>
+                        <th data-bs-toggle="tooltip" title="Month and year of arrival date.">Arrival Date</th>
+                        <th data-bs-toggle="tooltip" title="Number of days that elapsed between arrival date and checkout date.">Stay Duration</th>
+                        <th data-bs-toggle="tooltip" title="Number of adults.">Adults</th>
+                        <th data-bs-toggle="tooltip" title="Number of minors. (<18)">Minors</th>
+                        <th data-bs-toggle="tooltip" title="Whether the traveler is from abroad. Note that this data set uses hotel information from Portugal, so abroad is equivalent to not from Portugal.">From Abroad?</th>
+                        <th data-bs-toggle="tooltip" title="Type of hotel.">Hotel Type</th>
+                        <th data-bs-toggle="tooltip" title="Type of deposit, if any.">Deposit Type</th>
+                        <th data-bs-toggle="tooltip" title="Type of customer. Transient: Singular booking, not part of group or contract; Transient-Party: Multiple transient booking (rooms), but not part of contract; Group: Associated with a set group; Contract: Contract-bound">Customer Type</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -55,9 +60,9 @@
                         <td><input type="text" name="arrival_date" size="10" style="text-align:center"
                                    class="form-control" id="date" placeholder="MM/DD/YYYY" value="08/01"></td>
                         <td><input type="number" name="stay_duration" min="0" max="365" value="3"> days</td>
-                        <td><input type="number" name="adults" min="0" max="99" value="1"></td>
-                        <td><input type="number" name="children" min="0" max="99" value="0"></td>
-                        <td><input type="number" name="babies" min="0" max="99" value="0"></td>
+                        <td><input type="number" name="adults" min="0" max="99" value="2"></td>
+                        <td><input type="number" name="minors" min="0" max="99" value="0"></td>
+                        <td><input type="checkbox" name="is_foreign" checked></td>
                         <td><select name="hotel_type">
                                 <option value="city">City Hotel</option>
                                 <option value="resort">Resort Hotel</option>

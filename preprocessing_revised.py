@@ -12,7 +12,7 @@ def feature_reduction(feature_df):
     reduced_df = feature_df[RELEVANT_FEATURES]
 
     # Remove all N/A entries and reset index
-    reduced_df = reduced_df.dropna().reset_index()
+    reduced_df = reduced_df.dropna().reset_index(drop=True)
 
     # Feature modification
     # Combine arrival_date_month and arrival_date_day_of_month to form arrival_day_of_year
