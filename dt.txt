@@ -1,0 +1,1354 @@
+|--- non_refund <= 0.50
+|   |--- room_request_matched <= 0.50
+|   |   |--- is_foreign <= 0.50
+|   |   |   |--- lead_time <= 0.10
+|   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |--- arrival_day_of_year <= 168.50
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 43.50
+|   |   |   |   |   |   |   |   |--- contract <= 0.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 15.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.95
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.95
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  15.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 23.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  23.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |--- contract >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  43.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 55.50
+|   |   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.78
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.78
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 51.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  51.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  55.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 135.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  135.50
+|   |   |   |   |   |   |   |   |   |   |--- group <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- group >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- arrival_day_of_year >  168.50
+|   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.58
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.09
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.52
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.52
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 3.56
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- adr >  3.56
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.09
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 282.00
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  282.00
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 318.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  318.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |--- stays_in_week_nights >  1.58
+|   |   |   |   |   |   |   |   |--- adr <= -0.19
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= 2.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  2.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -0.19
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 2.58
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  2.58
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |--- lead_time <= -0.89
+|   |   |   |   |   |   |   |--- adr <= 0.30
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- adr >  0.30
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- lead_time >  -0.89
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |--- adr <= -1.22
+|   |   |   |   |   |   |--- lead_time <= -0.93
+|   |   |   |   |   |   |   |--- adr <= -1.31
+|   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 300.00
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 23.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  23.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  300.00
+|   |   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 5.56
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  5.56
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- adr >  -1.31
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -1.05
+|   |   |   |   |   |   |   |   |   |--- adr <= -1.27
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 65.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  65.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- adr >  -1.27
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -1.05
+|   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 17.20
+|   |   |   |   |   |   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  17.20
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 70.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  70.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- lead_time >  -0.93
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- adr >  -1.22
+|   |   |   |   |   |   |--- arrival_day_of_year <= 197.00
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- arrival_day_of_year >  197.00
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 203.00
+|   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  203.00
+|   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 6.23
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= -0.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  -0.43
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  6.23
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.76
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.76
+|   |   |   |   |   |   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |--- lead_time >  0.10
+|   |   |   |   |--- arrival_day_of_year <= 74.00
+|   |   |   |   |   |--- arrival_day_of_year <= 39.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- arrival_day_of_year >  39.50
+|   |   |   |   |   |   |--- adr <= -0.52
+|   |   |   |   |   |   |   |--- adr <= -0.85
+|   |   |   |   |   |   |   |   |--- adr <= -1.01
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- adr >  -1.01
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.79
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.79
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- adr >  -0.85
+|   |   |   |   |   |   |   |   |--- adr <= -0.74
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -0.74
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 50.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  50.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- adr >  -0.52
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- arrival_day_of_year >  74.00
+|   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 280.50
+|   |   |   |   |   |   |   |   |--- contract <= 0.50
+|   |   |   |   |   |   |   |   |   |--- adr <= 1.31
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 212.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  212.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- adr >  1.31
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.34
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.34
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- contract >  0.50
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  280.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 307.50
+|   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 292.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  292.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  307.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |--- lead_time <= 0.84
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 150.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 93.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  93.50
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  150.50
+|   |   |   |   |   |   |   |   |--- previous_cancellations <= 1.07
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 330.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  330.00
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 340.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  340.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- previous_cancellations >  1.07
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- lead_time >  0.84
+|   |   |   |   |   |   |   |--- booking_changes <= 1.96
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 194.50
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.33
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list <= 9.82
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list >  9.82
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.33
+|   |   |   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  194.50
+|   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= 1.17
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  1.17
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- booking_changes >  1.96
+|   |   |   |   |   |   |   |   |--- lead_time <= 3.11
+|   |   |   |   |   |   |   |   |   |--- adr <= -1.71
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adr >  -1.71
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- lead_time >  3.11
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |--- is_foreign >  0.50
+|   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |--- stays_in_weekend_nights <= 3.59
+|   |   |   |   |   |   |--- adr <= 0.98
+|   |   |   |   |   |   |   |--- is_repeated_guest <= 0.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 8.50
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 0.53
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  0.53
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.63
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.63
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  8.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 364.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.33
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.33
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  364.50
+|   |   |   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- is_repeated_guest >  0.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 360.00
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  360.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- adr >  0.98
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 98.00
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 88.50
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.33
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.33
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 39.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  39.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  88.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  98.00
+|   |   |   |   |   |   |   |   |--- adr <= 0.98
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 222.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  222.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- adr >  0.98
+|   |   |   |   |   |   |   |   |   |--- adults <= 1.06
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- adults >  1.06
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  1.58
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- stays_in_weekend_nights >  3.59
+|   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |--- transient <= 0.50
+|   |   |   |   |   |   |--- adr <= 0.65
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- adr >  0.65
+|   |   |   |   |   |   |   |--- adr <= 0.67
+|   |   |   |   |   |   |   |   |--- adults <= 1.06
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adults >  1.06
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- adr >  0.67
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.87
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.90
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.90
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.87
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- transient >  0.50
+|   |   |   |   |   |   |--- lead_time <= -0.83
+|   |   |   |   |   |   |   |--- adr <= -1.96
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -1.05
+|   |   |   |   |   |   |   |   |   |--- resort_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- resort_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -1.05
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- adr >  -1.96
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- lead_time >  -0.83
+|   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 136.00
+|   |   |   |   |   |   |   |   |   |--- lead_time <= 1.06
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |--- lead_time >  1.06
+|   |   |   |   |   |   |   |   |   |   |--- minors <= 0.94
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- minors >  0.94
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  136.00
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 336.50
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes <= 1.96
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes >  1.96
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  336.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.34
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.34
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 8.00
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 1.96
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  1.96
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  8.00
+|   |   |   |   |   |   |   |   |   |--- lead_time <= 2.09
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.86
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.86
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- lead_time >  2.09
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= 2.15
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  2.15
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |--- class: 1
+|   |--- room_request_matched >  0.50
+|   |   |--- lead_time <= -0.89
+|   |   |   |--- is_foreign <= 0.50
+|   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.97
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.97
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |   |--- resort_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |--- resort_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.91
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.94
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 22
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.94
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.91
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.35
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.35
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.97
+|   |   |   |   |   |   |   |   |   |--- minors <= 5.78
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.83
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.83
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- minors >  5.78
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.97
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.90
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.90
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.42
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.42
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 166.50
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.92
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.92
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  166.50
+|   |   |   |   |   |   |   |   |--- adr <= -0.72
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 296.00
+|   |   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  296.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -0.72
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 113.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 110.00
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -1.40
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -1.40
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  110.00
+|   |   |   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  113.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 354.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 51.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  51.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 52.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  52.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  354.50
+|   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 2.90
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  2.90
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 356.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  356.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 2.24
+|   |   |   |   |   |   |   |   |--- adr <= -0.19
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 188.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.90
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.90
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  188.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- adr >  -0.19
+|   |   |   |   |   |   |   |   |   |--- adults <= 1.06
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adults >  1.06
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  2.24
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 362.50
+|   |   |   |   |   |   |   |   |   |--- adr <= -1.27
+|   |   |   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adr >  -1.27
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.15
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.15
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  362.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.05
+|   |   |   |   |   |   |   |   |--- adr <= 3.37
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -1.05
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.49
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.49
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -1.05
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- adr >  3.37
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- stays_in_week_nights >  1.05
+|   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 249.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  249.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 341.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  341.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 3.57
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  3.57
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |--- adr <= -0.77
+|   |   |   |   |   |   |   |--- minors <= 0.94
+|   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.95
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.95
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- minors >  0.94
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- adr >  -0.77
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 338.50
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.92
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.93
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.93
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.20
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.20
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.92
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  338.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- is_foreign >  0.50
+|   |   |   |   |--- lead_time <= -0.93
+|   |   |   |   |   |--- lead_time <= -0.96
+|   |   |   |   |   |   |--- stays_in_weekend_nights <= 6.10
+|   |   |   |   |   |   |   |--- adr <= -1.85
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 57.50
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= -0.43
+|   |   |   |   |   |   |   |   |   |   |--- is_repeated_guest <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- is_repeated_guest >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  -0.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  57.50
+|   |   |   |   |   |   |   |   |   |--- adr <= -1.89
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- adr >  -1.89
+|   |   |   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |--- adr >  -1.85
+|   |   |   |   |   |   |   |   |--- no_deposit <= 0.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 249.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  249.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- no_deposit >  0.50
+|   |   |   |   |   |   |   |   |   |--- adr <= 0.69
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.97
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.97
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |   |--- adr >  0.69
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 94.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  94.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |--- stays_in_weekend_nights >  6.10
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- lead_time >  -0.96
+|   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |--- adr <= 0.62
+|   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 5.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  5.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 351.00
+|   |   |   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  351.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- adr >  0.62
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 115.50
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.32
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  1.32
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  115.50
+|   |   |   |   |   |   |   |   |   |--- adr <= 1.03
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= -0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  -0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- adr >  1.03
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.48
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.48
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |--- stays_in_week_nights <= 4.21
+|   |   |   |   |   |   |   |   |--- adr <= -1.85
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 255.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  255.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -1.85
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 26.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 24.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  24.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  26.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.51
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.51
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |--- stays_in_week_nights >  4.21
+|   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- lead_time >  -0.93
+|   |   |   |   |   |--- transient <= 0.50
+|   |   |   |   |   |   |--- adults <= -2.24
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 212.00
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  212.00
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- adults >  -2.24
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 38.00
+|   |   |   |   |   |   |   |   |--- adr <= -0.09
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- adr >  -0.09
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.07
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.07
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  38.00
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- transient >  0.50
+|   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |--- adr <= 0.43
+|   |   |   |   |   |   |   |   |--- adr <= -0.55
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 347.00
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 331.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  331.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  347.00
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.73
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.73
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -0.55
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 85.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 82.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  82.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  85.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 319.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  319.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |--- adr >  0.43
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.05
+|   |   |   |   |   |   |   |   |   |--- adr <= 0.43
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adr >  0.43
+|   |   |   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights >  1.05
+|   |   |   |   |   |   |   |   |   |--- adr <= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adr >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 2.12
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adr >  2.12
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |--- adr <= 0.13
+|   |   |   |   |   |   |   |   |--- adr <= -0.13
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.55
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.90
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.90
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.55
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.54
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.54
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |--- adr >  -0.13
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 28.00
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 24.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  24.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  28.00
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |--- adr >  0.13
+|   |   |   |   |   |   |   |   |--- adr <= 0.15
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 196.00
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  196.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  0.15
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 5.00
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  5.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |--- lead_time >  -0.89
+|   |   |   |--- is_foreign <= 0.50
+|   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |--- lead_time <= -0.74
+|   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |   |--- adr <= 0.18
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 284.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  284.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |--- adr >  0.18
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 168.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  168.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.84
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  1.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.84
+|   |   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 279.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  279.00
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 286.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  286.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- lead_time >  -0.74
+|   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= -0.43
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 318.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 16
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  318.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.73
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.73
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  -0.43
+|   |   |   |   |   |   |   |   |   |--- lead_time <= 0.99
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list <= 2.88
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 35
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list >  2.88
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- lead_time >  0.99
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list <= 12.07
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |   |   |   |   |   |   |--- days_in_waiting_list >  12.07
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 2.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |   |--- adr >  2.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 182.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  182.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.38
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.38
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.13
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 3.49
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 3.59
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 20
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  3.59
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  3.49
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 16.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  16.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.13
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.08
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  1.05
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.08
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= 1.17
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  1.17
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 0.53
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 158.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  158.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  0.53
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.65
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.65
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.81
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 284.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  284.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.81
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |--- previous_bookings_not_canceled <= 1.57
+|   |   |   |   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |   |   |   |--- booking_changes <= 1.96
+|   |   |   |   |   |   |   |   |--- adr <= 1.77
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  1.77
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 180.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  180.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- booking_changes >  1.96
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |   |   |   |--- adr <= -0.70
+|   |   |   |   |   |   |   |   |--- adr <= -1.53
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -1.53
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- adr >  -0.70
+|   |   |   |   |   |   |   |   |--- adr <= 1.91
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  1.91
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- previous_bookings_not_canceled >  1.57
+|   |   |   |   |   |   |--- days_in_waiting_list <= 0.96
+|   |   |   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |   |   |--- previous_cancellations <= 4.01
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 240.00
+|   |   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled <= 2.24
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- previous_bookings_not_canceled >  2.24
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  240.00
+|   |   |   |   |   |   |   |   |   |   |--- adults <= -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adults >  -0.59
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- previous_cancellations >  4.01
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |   |   |--- lead_time <= 1.13
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.77
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.77
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- lead_time >  1.13
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= 0.26
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  0.26
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- days_in_waiting_list >  0.96
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- is_foreign >  0.50
+|   |   |   |   |--- transient <= 0.50
+|   |   |   |   |   |--- previous_cancellations <= 0.48
+|   |   |   |   |   |   |--- minors <= 0.94
+|   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |--- adr <= -0.21
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 6.55
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.88
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.88
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  6.55
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- adr >  -0.21
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.14
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.14
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes <= 8.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes >  8.09
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |--- booking_changes <= 6.55
+|   |   |   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |--- booking_changes >  6.55
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 293.00
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.47
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.47
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  293.00
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.51
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.51
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- minors >  0.94
+|   |   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 206.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 33.50
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  33.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 155.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  155.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  206.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 208.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  208.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.19
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.19
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |--- previous_cancellations >  0.48
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- transient >  0.50
+|   |   |   |   |   |--- total_of_special_requests <= -0.09
+|   |   |   |   |   |   |--- adr <= -0.22
+|   |   |   |   |   |   |   |--- adr <= -0.68
+|   |   |   |   |   |   |   |   |--- lead_time <= 0.24
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 51.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.31
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.31
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  51.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights <= 0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_weekend_nights >  0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |--- lead_time >  0.24
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 290.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 126.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  126.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  290.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -1.27
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -1.27
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |--- adr >  -0.68
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 79.50
+|   |   |   |   |   |   |   |   |   |--- lead_time <= 0.48
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 25
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |--- lead_time >  0.48
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.55
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.55
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  79.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 295.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.33
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 22
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.33
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  295.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= 1.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  1.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |--- adr >  -0.22
+|   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.81
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 124.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.34
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.34
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  124.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.53
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.81
+|   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.30
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.30
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= 0.68
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 34
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  0.68
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 25
+|   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |--- booking_changes <= 1.96
+|   |   |   |   |   |   |   |   |   |--- lead_time <= -0.45
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 329.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  329.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- lead_time >  -0.45
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 16
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |--- booking_changes >  1.96
+|   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 1.52
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- adr >  1.52
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 233.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  233.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |--- total_of_special_requests >  -0.09
+|   |   |   |   |   |   |--- lead_time <= 1.10
+|   |   |   |   |   |   |   |--- adr <= -0.53
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 56.50
+|   |   |   |   |   |   |   |   |   |--- adr <= -0.68
+|   |   |   |   |   |   |   |   |   |   |--- resort_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- resort_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |--- adr >  -0.68
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  56.50
+|   |   |   |   |   |   |   |   |   |--- resort_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.60
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.60
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |--- resort_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 289.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  289.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |--- adr >  -0.53
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 322.50
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |   |--- adr <= 0.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 26
+|   |   |   |   |   |   |   |   |   |   |--- adr >  0.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 37
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes <= 1.96
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 23
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes >  1.96
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  322.50
+|   |   |   |   |   |   |   |   |   |--- city_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 364.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  364.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- city_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- adr <= -0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- adr >  -0.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 22
+|   |   |   |   |   |   |--- lead_time >  1.10
+|   |   |   |   |   |   |   |--- adr <= -0.05
+|   |   |   |   |   |   |   |   |--- lead_time <= 1.84
+|   |   |   |   |   |   |   |   |   |--- booking_changes <= 0.43
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 117.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  117.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |   |--- booking_changes >  0.43
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 365.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  365.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- lead_time >  1.84
+|   |   |   |   |   |   |   |   |   |--- lead_time <= 2.03
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 229.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  229.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- lead_time >  2.03
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= 2.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  2.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |--- adr >  -0.05
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 146.50
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 106.50
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- arrival_day_of_year >  106.50
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes <= 13.45
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |   |   |   |   |   |--- booking_changes >  13.45
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  146.50
+|   |   |   |   |   |   |   |   |   |--- lead_time <= 1.79
+|   |   |   |   |   |   |   |   |   |   |--- resort_hotel <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 20
+|   |   |   |   |   |   |   |   |   |   |--- resort_hotel >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |--- lead_time >  1.79
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests <= 2.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- total_of_special_requests >  2.43
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|--- non_refund >  0.50
+|   |--- booking_changes <= 0.43
+|   |   |--- previous_bookings_not_canceled <= 3.90
+|   |   |   |--- is_foreign <= 0.50
+|   |   |   |   |--- minors <= 2.15
+|   |   |   |   |   |--- lead_time <= -0.75
+|   |   |   |   |   |   |--- transient <= 0.50
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 244.00
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year <= 115.50
+|   |   |   |   |   |   |   |   |   |--- adr <= -1.33
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- adr >  -1.33
+|   |   |   |   |   |   |   |   |   |   |--- lead_time <= -0.88
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- lead_time >  -0.88
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- arrival_day_of_year >  115.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  244.00
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- transient >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- lead_time >  -0.75
+|   |   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |   |--- arrival_day_of_year <= 101.00
+|   |   |   |   |   |   |   |   |--- lead_time <= -0.03
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- lead_time >  -0.03
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- arrival_day_of_year >  101.00
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- minors >  2.15
+|   |   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- is_foreign >  0.50
+|   |   |   |   |--- transient_party <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- transient_party >  0.50
+|   |   |   |   |   |--- class: 0
+|   |   |--- previous_bookings_not_canceled >  3.90
+|   |   |   |--- arrival_day_of_year <= 256.00
+|   |   |   |   |--- class: 0
+|   |   |   |--- arrival_day_of_year >  256.00
+|   |   |   |   |--- class: 1
+|   |--- booking_changes >  0.43
+|   |   |--- is_foreign <= 0.50
+|   |   |   |--- previous_bookings_not_canceled <= 0.24
+|   |   |   |   |--- lead_time <= -0.89
+|   |   |   |   |   |--- arrival_day_of_year <= 322.00
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- arrival_day_of_year >  322.00
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- lead_time >  -0.89
+|   |   |   |   |   |--- transient <= 0.50
+|   |   |   |   |   |   |--- lead_time <= 0.71
+|   |   |   |   |   |   |   |--- lead_time <= 0.54
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights <= -0.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- stays_in_week_nights >  -0.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- lead_time >  0.54
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- lead_time >  0.71
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- transient >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- previous_bookings_not_canceled >  0.24
+|   |   |   |   |--- class: 0
+|   |   |--- is_foreign >  0.50
+|   |   |   |--- class: 0
