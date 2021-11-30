@@ -4,6 +4,8 @@ FOLD_COUNT = 10
 
 USE_LEGACY_DATASET = False
 
+PICKLE_MODELS = False
+
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December']
 
@@ -31,4 +33,31 @@ RELEVANT_FEATURES = [
     "customer_type",    # Needs to be 1-hot encoded into (transient_party, transient, contract, group)
     "adr",
     "total_of_special_requests"
+]
+
+FINAL_FEATURES = [
+    "lead_time",
+    "arrival_day_of_year",
+    "stays_in_weekend_nights",
+    "stays_in_week_nights",
+    "adults",
+    "minors",
+    "is_foreign",
+    "is_repeated_guest",
+    "previous_cancellations",
+    "previous_bookings_not_canceled",
+    "room_request_matched",
+    "booking_changes",
+    "days_in_waiting_list",
+    "adr",
+    "total_of_special_requests",
+    "city_hotel",
+    "resort_hotel",
+    "no_deposit",
+    "non_refund",
+    "refundable",
+    "contract",
+    "group",
+    "transient",
+    "transient_party"
 ]

@@ -1,5 +1,7 @@
 # Driver file.
 # Used for conveniently sandboxing and comparing different models' performance.
+
+import pickle
 from clf_models.lgr import process_lgr
 from clf_models.nb import process_nb
 from clf_models.rf import process_rf
@@ -43,6 +45,11 @@ def main():
         print("Training and prediction completed in {}s.".format(round(time() - start_time, 4)))
 
     # Models are saved in the dictionary models and can be accessed through models[model_name]
+    # Pickle the models to eliminate need for training every time we run
+    for key, model in models.items():
+        with open('{}.pickle'.format(key), 'wb') as f:
+            pickle.dump(model, f, protocol=pickle.HIGHEST_PROTOCOL)
+        print('{}.pickle'.format(key), "file created")
 
 
 if __name__ == "__main__":
