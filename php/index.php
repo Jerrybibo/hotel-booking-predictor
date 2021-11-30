@@ -38,7 +38,7 @@
             <li>Several features are excluded from this form due to weak predictive power, or very rare deviations from average/majority value.</li>
             <li>Hover over the feature title text to learn more.</li>
         </ul>
-        <form action="predict.php" method="post">
+        <form action="" method="post">
             <table class="table table-bordered" style="text-align:center">
                 <thead>
                     <tr>
@@ -90,6 +90,25 @@
             </select><br><br>
             <input type="submit" value="Predict!">
         </form>
+        <p>
+            <?php
+                include("predict.php");
+                if (!empty($_POST)) {
+                    echo '<table class="table table-bordered" style="text-align:center; width:auto; float:left; margin:20px"><thead><tr><th colspan="2">Input</th></tr></thead><tbody>';
+                    foreach ($_POST as $k => $v) {
+                        echo "<tr><td>$k</td><td>$v</td></tr>";
+                    }
+                    echo '</tbody></table>';
+                    echo '<table class="table table-bordered" style="text-align:center; width:auto; float:left; margin:20px"><thead><tr><th colspan="2">Output</th></tr></thead><tbody>';
+                    $raw_outcome = str_replace("'", '"', get_prediction($_POST));
+                    $outcome = json_decode($raw_outcome);
+                    foreach ($outcome as $k => $v) {
+                        echo "<tr><td>$k</td><td>$v</td></tr>";
+                    }
+                    echo '</tbody></table>';
+                }
+            ?>
+        </p>
     </div>
 </body>
 </html>
