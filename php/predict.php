@@ -1,7 +1,7 @@
 <!-- todo -->
 
 <?php
-    foreach ($_POST as $k => $v) {
-        print("$k : $v<br>");
-    }
+    $result = passthru('python3 ../../foo.py' . json_encode($_POST));
+    print($result);
 ?>
+

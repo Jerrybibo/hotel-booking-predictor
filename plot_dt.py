@@ -1,6 +1,5 @@
 from sklearn import tree
-from matplotlib import pyplot as plt
-from dt import process_dt
+from clf_models.dt import process_dt
 from pandas import read_csv
 
 x_train = read_csv('x_train.csv')

@@ -75,7 +75,7 @@
                         <td><select name="customer_type">
                                 <option value="contract">Contract</option>
                                 <option value="group">Group</option>
-                                <option value="transient">Transient</option>
+                                <option value="transient" selected>Transient</option>
                                 <option value="transient_party">Transient-Party</option>
                             </select></td>
                     </tr>

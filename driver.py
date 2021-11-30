@@ -1,9 +1,9 @@
 # Driver file.
 # Used for conveniently sandboxing and comparing different models' performance.
-from lgr import process_lgr
-from nb import process_nb
-from rf import process_rf
-from dt import process_dt
+from clf_models.lgr import process_lgr
+from clf_models.nb import process_nb
+from clf_models.rf import process_rf
+from clf_models.dt import process_dt
 from time import time
 from pandas import read_csv
 from globals import USE_LEGACY_DATASET
