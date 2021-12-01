@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import RandomizedSearchCV
 
+
 def main():
     # Read dataset
     x_train = pd.read_csv('../x_train.csv').to_numpy()
@@ -16,15 +17,13 @@ def main():
     rf = RandomForestClassifier()
     # grid:
     # number of trees
-    n_estimators = [int(x) for x in np.linspace(start=200, stop=1000, num=10)]
+    n_estimators = list(range(30, 39))
     # max features
     max_features = ['auto', 'sqrt']
     # number of depth
-    max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
-    # min sample required for split
-    min_samples_split = [50, 100, 150]
+    max_depth = list(range(20, 30))
     # msl
-    min_samples_leaf = [1, 10, 20]
+    min_samples_leaf = [1, 2, 3]
     # bootstrap
     bootstrap = [True, False]
 
@@ -32,7 +31,6 @@ def main():
     random_grid = {'n_estimators': n_estimators,
                    'max_features': max_features,
                    'max_depth': max_depth,
-                   'min_samples_split': min_samples_split,
                    'min_samples_leaf': min_samples_leaf,
                    'bootstrap': bootstrap}
 
@@ -54,6 +52,7 @@ def main():
 
     # Return model for later usage
     return best_random
+
 
 if __name__ == "__main__":
      main()

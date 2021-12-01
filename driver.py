@@ -47,9 +47,9 @@ def main():
     # Models are saved in the dictionary models and can be accessed through models[model_name]
     # Pickle the models to eliminate need for training every time we run
     for key, model in models.items():
-        with open('{}.pickle'.format(key), 'wb') as f:
+        with open('pickled_models/{}.pickle'.format(key), 'wb') as f:
             pickle.dump(model, f, protocol=pickle.HIGHEST_PROTOCOL)
-        print('{}.pickle'.format(key), "file created")
+        print('pickled_models/{}.pickle'.format(key), "file created")
 
 
 if __name__ == "__main__":

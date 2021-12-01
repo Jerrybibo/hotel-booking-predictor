@@ -80,23 +80,10 @@ def feature_reduction(feature_df):
 
 def preprocess(x_train, x_test, y_train, y_test):
     # Given the four train-test sets, scale reasonable features
-    std_scale_features = [
-        'lead_time',
-        'stays_in_weekend_nights',
-        'stays_in_week_nights',
-        'adults',
-        'minors',
-        'previous_cancellations',
-        'previous_bookings_not_canceled',
-        'booking_changes',
-        'days_in_waiting_list',
-        'adr',
-        'total_of_special_requests'
-    ]
     # Initialize StandardScaler and scale features
     std_scaler = StandardScaler()
-    x_train[std_scale_features] = std_scaler.fit_transform(x_train[std_scale_features])
-    x_test[std_scale_features] = std_scaler.transform(x_test[std_scale_features])
+    x_train[STD_SCALE_FEATURES] = std_scaler.fit_transform(x_train[STD_SCALE_FEATURES])
+    x_test[STD_SCALE_FEATURES] = std_scaler.transform(x_test[STD_SCALE_FEATURES])
     return x_train, x_test, y_train, y_test
 
 

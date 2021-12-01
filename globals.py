@@ -35,6 +35,20 @@ RELEVANT_FEATURES = [
     "total_of_special_requests"
 ]
 
+STD_SCALE_FEATURES = [
+    'lead_time',
+    'stays_in_weekend_nights',
+    'stays_in_week_nights',
+    'adults',
+    'minors',
+    'previous_cancellations',
+    'previous_bookings_not_canceled',
+    'booking_changes',
+    'days_in_waiting_list',
+    'adr',
+    'total_of_special_requests'
+]
+
 FINAL_FEATURES = [
     "lead_time",
     "arrival_day_of_year",
@@ -61,3 +75,30 @@ FINAL_FEATURES = [
     "transient",
     "transient_party"
 ]
+
+DEFAULT_FEATURE_VALUES = {
+    "lead_time": 0,
+    "arrival_day_of_year": 1,
+    "stays_in_weekend_nights": 0,
+    "stays_in_week_nights": 1,
+    "adults": 2,
+    "minors": 0,
+    "is_foreign": 1,
+    "is_repeated_guest": 0,
+    "previous_cancellations": 0,
+    "previous_bookings_not_canceled": 0,
+    "room_request_matched": 1,
+    "booking_changes": 0,
+    "days_in_waiting_list": 0,
+    "adr": 100,
+    "total_of_special_requests": 0,
+    "city_hotel": 1,
+    "resort_hotel": 0,
+    "no_deposit": 1,
+    "non_refund": 0,
+    "refundable": 0,
+    "contract": 0,
+    "group": 0,
+    "transient": 0,
+    "transient_party": 1
+}

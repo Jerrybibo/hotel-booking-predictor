@@ -7,7 +7,12 @@ from sklearn.metrics import accuracy_score
 
 def process_rf(x_train, x_test, y_train, y_test):
     # Initialize random forest classifier
-    rf = RandomForestClassifier(n_estimators=100, bootstrap=True, max_features='sqrt').fit(x_train, ravel(y_train))
+    # See hp_search/rf_tuning.py for hyperparameter search scripts
+    rf = RandomForestClassifier(n_estimators=37,
+                                max_depth=29,
+                                min_samples_leaf=1,
+                                max_features='sqrt',
+                                bootstrap=True).fit(x_train, ravel(y_train))
 
     # Predict accuracy using KFold
     kf = KFold(n_splits=FOLD_COUNT, random_state=RANDOM_STATE, shuffle=True)

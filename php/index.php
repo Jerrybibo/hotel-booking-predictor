@@ -19,7 +19,7 @@
             const date_input = $('input[name="arrival_date"]');
             const container = "body";
             const options = {
-                format: 'mm/dd',
+                format: 'mm/dd/yy',
                 container: container,
                 autoclose: true,
                 orientation: 'top'
@@ -58,7 +58,7 @@
                     <tr>
                         <td><input type="number" name="lead_time" min="0" max="999" value="0"> days</td>
                         <td><input type="text" name="arrival_date" size="10" style="text-align:center"
-                                   class="form-control" id="date" placeholder="MM/DD/YYYY" value="08/01"></td>
+                                   class="form-control" id="date" placeholder="MM/DD/YY" value="08/01/22"></td>
                         <td><input type="number" name="stay_duration" min="0" max="365" value="3"> days</td>
                         <td><input type="number" name="adults" min="0" max="99" value="2"></td>
                         <td><input type="number" name="minors" min="0" max="99" value="0"></td>
@@ -100,8 +100,9 @@
                     }
                     echo '</tbody></table>';
                     echo '<table class="table table-bordered" style="text-align:center; width:auto; float:left; margin:20px"><thead><tr><th colspan="2">Output</th></tr></thead><tbody>';
-                    $raw_outcome = str_replace("'", '"', get_prediction($_POST));
-                    $outcome = json_decode($raw_outcome);
+                    $raw_outcome = get_prediction($_POST);
+                    $stripped_outcome = str_replace("'", '"', $raw_outcome);
+                    $outcome = json_decode($stripped_outcome);
                     foreach ($outcome as $k => $v) {
                         echo "<tr><td>$k</td><td>$v</td></tr>";
                     }

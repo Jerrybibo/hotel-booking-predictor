@@ -18,23 +18,20 @@ def main():
     # number of trees
     splitter = ["best", "random"]
     # number of depth
-    max_depth = [10, 20, 50, 100, 200]
+    max_depth = list(range(10, 21))
     # msl
-    min_samples_leaf = [1, 5, 10, 20, 30]
+    min_samples_leaf = list(range(6, 17, 2))
     # weight fraction leaf
-    min_weight_fraction_leaf = [0.1, 0.2, 0.3, 0.4, 0.5]
-    # max_features
-    max_features = ["auto", "log2", "sqrt"]
-    # max_leaf_nodes
-    max_leaf_nodes = [10, 20, 30, 40, 50]
+    # min_weight_fraction_leaf = [0.1, 0.2, 0.3, 0.4, 0.5]
+    # # max_features
+    # max_features = ["auto", "log2", "sqrt"]
+    # # max_leaf_nodes
+    # max_leaf_nodes = [10, 20, 30, 40, 50]
 
     # create grid
     random_grid = {'splitter': splitter,
-                   'max_features': max_features,
                    'max_depth': max_depth,
-                   'min_samples_leaf': min_samples_leaf,
-                   'max_leaf_nodes': max_leaf_nodes,
-                   'min_weight_fraction_leaf': min_weight_fraction_leaf}
+                   'min_samples_leaf': min_samples_leaf}
 
     dt_random = RandomizedSearchCV(estimator=dt, param_distributions=random_grid,
                                    n_iter=100, cv=3, verbose=2, random_state=42,

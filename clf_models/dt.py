@@ -4,9 +4,14 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score
 
+
 def process_dt(x_train, x_test, y_train, y_test):
     # Initialize decision tree classifier
-    dt = DecisionTreeClassifier(random_state=RANDOM_STATE).fit(x_train, y_train)
+    # See hp_search/dt_tuning.py for hyperparameter search scripts
+    dt = DecisionTreeClassifier(splitter='best',
+                                min_samples_leaf=10,
+                                max_depth=16,
+                                random_state=RANDOM_STATE).fit(x_train, y_train)
 
     # Predict accuracy using KFold
     kf = KFold(n_splits=FOLD_COUNT, random_state=RANDOM_STATE, shuffle=True)
