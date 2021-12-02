@@ -54,7 +54,10 @@ input_row[STD_SCALE_FEATURES] = std_scaler.transform(input_row[STD_SCALE_FEATURE
 input_row = input_row.to_numpy()
 
 result = dict()
-result['will_cancel'] = classifier.predict(input_row)[0]
+if classifier_name in ['lgr', 'rf']:
+    result['will_cancel'] = str(round(classifier.predict_proba(input_row)[0][1] * 100, 1)) + "%"
+else:
+    result['will_cancel'] = str(classifier.predict(input_row)[0])
 result['time_elapsed'] = round(time() - start_time, 2)
 
 print(result)
